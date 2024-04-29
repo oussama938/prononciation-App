@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Buttons column -->
+            <div class="col-md-3">
+                <div *ngFor="let unite of unites" class="mb-4" style="margin-top:100px">
+                    <button [routerLink]="['unite', unite.id]" class="btn btn-info btn-block " (click)="toggleUnite()">Unité {{ unite.id }}</button>
+                </div>
+            </div>
+            <!-- Router outlet column -->
+            <div class="col-md-9 d-flex justify-content-center align-items-right mt-3">
+                <div *ngIf="showUnite">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+    
+
